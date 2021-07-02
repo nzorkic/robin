@@ -12,15 +12,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // Project imports:
-import 'package:template_app/application/config/app_constants.dart';
-import 'package:template_app/application/config/storage_constants.dart';
-import 'package:template_app/application/init_log.dart';
-import 'package:template_app/application/logging/log_pens.dart';
-import 'package:template_app/application/logging/logger_types.dart';
-import 'package:template_app/application/navigation/app_router.gr.dart';
-import 'package:template_app/application/rs_delegate.dart';
-import 'package:template_app/providers.dart';
-import 'package:template_app/utils/locale_utils.dart';
+import 'package:robin/application/config/app_constants.dart';
+import 'package:robin/application/config/storage_constants.dart';
+import 'package:robin/application/init_log.dart';
+import 'package:robin/application/logging/log_pens.dart';
+import 'package:robin/application/logging/logger_types.dart';
+import 'package:robin/application/navigation/app_router.gr.dart';
+import 'package:robin/application/rs_delegate.dart';
+import 'package:robin/providers.dart';
+import 'package:robin/utils/locale_utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

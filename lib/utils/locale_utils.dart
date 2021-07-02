@@ -2,9 +2,9 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
-import 'package:template_app/application/config/app_constants.dart';
-import 'package:template_app/application/config/storage_constants.dart';
-import 'package:template_app/providers.dart';
+import 'package:robin/application/config/app_constants.dart';
+import 'package:robin/application/config/storage_constants.dart';
+import 'package:robin/providers.dart';
 
 class LocaleUtils {
   LocaleUtils._();

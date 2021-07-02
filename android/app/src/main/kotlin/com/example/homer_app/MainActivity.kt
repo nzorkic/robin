@@ -1,4 +1,4 @@
-package com.nzorkic.template
+package com.nzorkic.robin
 
 import io.flutter.embedding.android.FlutterActivity
 

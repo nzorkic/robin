@@ -6,7 +6,7 @@ import 'package:logging/logging.dart';
 import 'package:simple_logger/simple_logger.dart';
 
 // Project imports:
-import 'package:template_app/application/logging/log_pens.dart';
+import 'package:robin/application/logging/log_pens.dart';
 
 final logger = SimpleLogger();
 

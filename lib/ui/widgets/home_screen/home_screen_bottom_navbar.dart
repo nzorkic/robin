@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template_app/providers.dart';
+import 'package:robin/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeScreenBottomNavbar extends StatelessWidget {

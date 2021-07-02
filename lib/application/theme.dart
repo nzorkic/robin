@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import 'package:template_app/application/config/app_constants.dart';
+import 'package:robin/application/config/app_constants.dart';
 
 class AppTheme {
   /// Colors from Tailwind CSS

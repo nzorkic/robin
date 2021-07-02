@@ -10,7 +10,7 @@
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
-// import 'package:template_app/main.dart';
+// import 'package:robin/main.dart';
 
 void main() {
   testWidgets('Always passing test!', (WidgetTester tester) async {
