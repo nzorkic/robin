@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:robin/ui/widgets/home_screen_pages/posts_screen/posts_screen_carousel.dart';
 
 class PostsScreenPost extends StatelessWidget {
   const PostsScreenPost({Key? key}) : super(key: key);
@@ -53,12 +54,7 @@ class PostsScreenPost extends StatelessWidget {
                 ),
               ],
             ),
-            Image.network(
-              'https://picsum.photos/seed/789/300',
-              width: double.infinity,
-              height: 250,
-              fit: BoxFit.cover,
-            ),
+            PostsScreenCarousel(),
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
