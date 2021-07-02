@@ -8,14 +8,18 @@ import 'package:template_app/application/config/storage_constants.dart';
 import 'package:template_app/application/notifier/locale_notifier.dart';
 import 'package:template_app/application/notifier/theme_notifier.dart';
 import 'package:template_app/application/theme.dart';
+import 'package:template_app/application/notifier/bottom_navbar_utils.dart';
 import 'package:template_app/utils/storage_utils.dart';
 
 final settingsBoxProvider = Provider<Box>((ref) {
   throw UnimplementedError();
 });
 
-final appThemeProvider = Provider<AppTheme>((ref) {
-  return AppTheme();
+final appThemeProvider = Provider<AppTheme>((_) => AppTheme());
+
+final bottomNavbarUtilsProvider =
+    StateNotifierProvider<BottomNavbarUtils, int>((ref) {
+  return BottomNavbarUtils(0);
 });
 
 final storageUtilsProvider = Provider<StorageUtils>((ref) {

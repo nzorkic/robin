@@ -23,4 +23,12 @@ class StorageUtils {
   Future<void> setStringValue(String key, String value) async {
     return await box.put(key, value);
   }
+
+  int getIntValue(String key, {int defaultValue = 0}) {
+    return box.get(key, defaultValue: defaultValue);
+  }
+
+  Future<void> setIntValue(String key, int value) async {
+    return await box.put(key, value);
+  }
 }

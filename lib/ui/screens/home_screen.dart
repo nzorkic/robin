@@ -2,14 +2,15 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:auto_route/auto_route.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import 'package:template_app/application/logging/log_pens.dart';
 import 'package:template_app/application/logging/logger_types.dart';
-import 'package:template_app/application/navigation/app_router.gr.dart';
-import 'package:template_app/application/resources/assets.dart';
+import 'package:template_app/providers.dart';
+import 'package:template_app/ui/screens/home_screen_pages/posts_screen.dart';
+import 'package:template_app/ui/widgets/home_screen/home_screen_bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget with UiLogger {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,36 +19,28 @@ class HomeScreen extends StatelessWidget with UiLogger {
   Widget build(BuildContext context) {
     logger.info(penInfo('Building HomeScreen...'));
     return Scaffold(
-      appBar: AppBar(
-        title: Text(tr('homepage_title')),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: GestureDetector(
-              child: const Icon(Icons.settings),
-              onTap: () => context.pushRoute(const SettingsRoute()),
+      body: Consumer(
+        builder: (_, watch, __) {
+          return Center(
+            child: _pages.elementAt(
+              watch(bottomNavbarUtilsProvider),
             ),
-          ),
-        ],
+          );
+        },
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              Assets.bird,
-              width: 350,
-              height: 150,
-            ),
-            const SizedBox(height: 30),
-            Text(
-              tr('greeting'),
-              style: const TextStyle(fontSize: 18.0),
-            )
-          ],
-        ),
-      ),
+      bottomNavigationBar: const HomeScreenBottomNavbar(),
     );
   }
+
+  static const List<Widget> _pages = <Widget>[
+    PostsScreen(),
+    Icon(
+      Icons.camera,
+      size: 150,
+    ),
+    Icon(
+      Icons.chat,
+      size: 150,
+    ),
+  ];
 }

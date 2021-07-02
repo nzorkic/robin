@@ -8,4 +8,5 @@ abstract class StorageValues {
   // SETTINGS_STORAGE
   static const String DARK_THEME_ENABLED = 'darkThemeEnabled';
   static const String CURRENT_LANGUAGE = 'language';
+  static const String CURRENT_BOTTON_TAB = 'currentTab';
 }

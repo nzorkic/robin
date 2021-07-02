@@ -15,7 +15,7 @@ class AppThemeNotifier extends StateNotifier<bool> with UtilityLogger {
 
   final bool isDarkTheme;
 
-  toggleAppTheme(BuildContext context) {
+  void toggleAppTheme(BuildContext context) {
     final _isDarkThemeEnabled = context
         .read(storageUtilsProvider)
         .getBoolValue(StorageValues.DARK_THEME_ENABLED);
