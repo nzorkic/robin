@@ -2,6 +2,7 @@
 import 'dart:io';
 
 // Flutter imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,7 @@ import 'package:robin/utils/locale_utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   EasyLocalization.logger.enableBuildModes = [];
   await EasyLocalization.ensureInitialized();
   if (!kIsWeb && Platform.isAndroid) {

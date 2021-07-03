@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "406080929537",
+    "project_id": "robin-ac2d4",
+    "storage_bucket": "robin-ac2d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406080929537:android:acf9c889b35be6b374a500",
+        "android_client_info": {
+          "package_name": "com.nzorkic.robin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406080929537-di3aqn6m37jgb37j857c60f6ppd6pegc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nzorkic.robin",
+            "certificate_hash": "5ffb0ea2b18c0b5b68900ae49e070ad3604dce25"
+          }
+        },
+        {
+          "client_id": "406080929537-998gei7h98njbdnqcoa8sjjf0gd7ap7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCczg99m5bXbwWSajbq0kvfI1jv6brfDo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406080929537-998gei7h98njbdnqcoa8sjjf0gd7ap7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
