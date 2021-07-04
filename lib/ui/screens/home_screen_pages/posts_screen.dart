@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import 'package:robin/application/navigation/app_router.gr.dart';
+import 'package:robin/repositories/auth_repository.dart';
 import 'package:robin/ui/widgets/home_screen_pages/posts_screen/posts_screen_post.dart';
 
 class PostsScreen extends StatelessWidget {
@@ -18,6 +20,9 @@ class PostsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(tr('homepage_title')),
         actions: [
+          ElevatedButton(
+              onPressed: () => context.read(authRepositoryProvider).signOut(),
+              child: const Text('Sign Out')),
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: GestureDetector(

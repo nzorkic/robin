@@ -19,6 +19,7 @@ import 'package:robin/application/init_log.dart';
 import 'package:robin/application/logging/log_pens.dart';
 import 'package:robin/application/logging/logger_types.dart';
 import 'package:robin/application/navigation/app_router.gr.dart';
+import 'package:robin/application/navigation/auth_guard.dart';
 import 'package:robin/application/rs_delegate.dart';
 import 'package:robin/providers.dart';
 import 'package:robin/utils/locale_utils.dart';
@@ -53,7 +54,7 @@ void main() async {
 }
 
 class MyApp extends ConsumerWidget {
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(authGuard: AuthGuard());
 
   MyApp({Key? key}) : super(key: key);
 

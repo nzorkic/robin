@@ -2,18 +2,25 @@
 import 'package:auto_route/auto_route.dart';
 
 // Project imports:
+import 'package:robin/application/navigation/auth_guard.dart';
 import 'package:robin/ui/screens/home_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/messages_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/posts_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/profile_screen.dart';
+import 'package:robin/ui/screens/login_screen.dart';
 import 'package:robin/ui/screens/settings_screen.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Screen,Route',
   routes: <AutoRoute>[
     AutoRoute(
+      path: '/login',
+      page: LoginScreen,
+    ),
+    AutoRoute(
       path: '/',
       page: HomeScreen,
+      guards: [AuthGuard],
       children: [
         AutoRoute(
           path: 'posts',

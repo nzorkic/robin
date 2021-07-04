@@ -11,27 +11,38 @@ import 'package:flutter/material.dart' as _i2;
 import 'package:auto_route/auto_route.dart' as _i1;
 
 // Project imports:
-import 'package:robin/ui/screens/home_screen.dart' as _i3;
-import 'package:robin/ui/screens/home_screen_pages/posts_screen.dart' as _i5;
-import 'package:robin/ui/screens/messages_screen.dart' as _i6;
-import 'package:robin/ui/screens/profile_screen.dart' as _i7;
-import 'package:robin/ui/screens/settings_screen.dart' as _i4;
+import 'package:robin/application/navigation/auth_guard.dart' as _i3;
+import 'package:robin/ui/screens/home_screen.dart' as _i5;
+import 'package:robin/ui/screens/home_screen_pages/messages_screen.dart' as _i8;
+import 'package:robin/ui/screens/home_screen_pages/posts_screen.dart' as _i7;
+import 'package:robin/ui/screens/home_screen_pages/profile_screen.dart' as _i9;
+import 'package:robin/ui/screens/login_screen.dart' as _i4;
+import 'package:robin/ui/screens/settings_screen.dart' as _i6;
 
 class AppRouter extends _i1.RootStackRouter {
-  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
+  AppRouter(
+      {_i2.GlobalKey<_i2.NavigatorState>? navigatorKey,
+      required this.authGuard})
       : super(navigatorKey);
+
+  final _i3.AuthGuard authGuard;
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
+    LoginRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i4.LoginScreen();
+        }),
     HomeRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i3.HomeScreen();
+          return const _i5.HomeScreen();
         }),
     SettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i4.SettingsScreen();
+          return const _i6.SettingsScreen();
         }),
     PostsRouter.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
@@ -51,23 +62,26 @@ class AppRouter extends _i1.RootStackRouter {
     PostsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i5.PostsScreen();
+          return const _i7.PostsScreen();
         }),
     MessagesRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i6.MessagesScreen();
+          return const _i8.MessagesScreen();
         }),
     ProfileRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i7.ProfileScreen();
+          return const _i9.ProfileScreen();
         })
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig(HomeRoute.name, path: '/', children: [
+        _i1.RouteConfig(LoginRoute.name, path: '/login'),
+        _i1.RouteConfig(HomeRoute.name, path: '/', guards: [
+          authGuard
+        ], children: [
           _i1.RouteConfig(PostsRouter.name, path: 'posts', children: [
             _i1.RouteConfig(PostsRoute.name, path: ''),
             _i1.RouteConfig('*#redirect',
@@ -86,6 +100,12 @@ class AppRouter extends _i1.RootStackRouter {
         ]),
         _i1.RouteConfig(SettingsRoute.name, path: '/settings')
       ];
+}
+
+class LoginRoute extends _i1.PageRouteInfo {
+  const LoginRoute() : super(name, path: '/login');
+
+  static const String name = 'LoginRoute';
 }
 
 class HomeRoute extends _i1.PageRouteInfo {

@@ -11,7 +11,6 @@ import 'package:robin/application/navigation/app_router.gr.dart';
 
 // Package imports:
 
-
 class HomeScreen extends StatelessWidget with UiLogger {
   const HomeScreen({Key? key}) : super(key: key);
 
