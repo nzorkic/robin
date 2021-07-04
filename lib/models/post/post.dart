@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:robin/models/geo/geo.dart';
 import 'package:robin/models/user/user.dart';
 

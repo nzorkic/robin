@@ -1,19 +1,23 @@
 // Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // Project imports:
 import 'package:robin/application/config/app_constants.dart';
 import 'package:robin/application/config/storage_constants.dart';
+import 'package:robin/application/notifier/bottom_navbar_utils.dart';
 import 'package:robin/application/notifier/locale_notifier.dart';
 import 'package:robin/application/notifier/theme_notifier.dart';
 import 'package:robin/application/theme.dart';
-import 'package:robin/application/notifier/bottom_navbar_utils.dart';
 import 'package:robin/utils/storage_utils.dart';
 
 final settingsBoxProvider = Provider<Box>((ref) {
   throw UnimplementedError();
 });
+
+final firebaseAuthProvider =
+    Provider<FirebaseAuth>((_) => FirebaseAuth.instance);
 
 final appThemeProvider = Provider<AppTheme>((_) => AppTheme());
 

@@ -1,6 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+// Project imports:
 import 'package:robin/application/navigation/app_router.gr.dart';
 import 'package:robin/ui/widgets/home_screen_pages/posts_screen/posts_screen_post.dart';
 
