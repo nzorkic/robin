@@ -24,6 +24,8 @@ class _$PostTearOff {
       {required int id,
       required User author,
       required DateTime date,
+      required Habitat currentHabitat,
+      required Condition condition,
       List<String> media = const [],
       String description = '',
       Geo? location}) {
@@ -31,6 +33,8 @@ class _$PostTearOff {
       id: id,
       author: author,
       date: date,
+      currentHabitat: currentHabitat,
+      condition: condition,
       media: media,
       description: description,
       location: location,
@@ -50,6 +54,8 @@ mixin _$Post {
   int get id => throw _privateConstructorUsedError;
   User get author => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
+  Habitat get currentHabitat => throw _privateConstructorUsedError;
+  Condition get condition => throw _privateConstructorUsedError;
   List<String> get media => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Geo? get location => throw _privateConstructorUsedError;
@@ -67,6 +73,8 @@ abstract class $PostCopyWith<$Res> {
       {int id,
       User author,
       DateTime date,
+      Habitat currentHabitat,
+      Condition condition,
       List<String> media,
       String description,
       Geo? location});
@@ -88,6 +96,8 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
     Object? id = freezed,
     Object? author = freezed,
     Object? date = freezed,
+    Object? currentHabitat = freezed,
+    Object? condition = freezed,
     Object? media = freezed,
     Object? description = freezed,
     Object? location = freezed,
@@ -105,6 +115,14 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      currentHabitat: currentHabitat == freezed
+          ? _value.currentHabitat
+          : currentHabitat // ignore: cast_nullable_to_non_nullable
+              as Habitat,
+      condition: condition == freezed
+          ? _value.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as Condition,
       media: media == freezed
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
@@ -148,6 +166,8 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
       {int id,
       User author,
       DateTime date,
+      Habitat currentHabitat,
+      Condition condition,
       List<String> media,
       String description,
       Geo? location});
@@ -172,6 +192,8 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
     Object? id = freezed,
     Object? author = freezed,
     Object? date = freezed,
+    Object? currentHabitat = freezed,
+    Object? condition = freezed,
     Object? media = freezed,
     Object? description = freezed,
     Object? location = freezed,
@@ -189,6 +211,14 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      currentHabitat: currentHabitat == freezed
+          ? _value.currentHabitat
+          : currentHabitat // ignore: cast_nullable_to_non_nullable
+              as Habitat,
+      condition: condition == freezed
+          ? _value.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as Condition,
       media: media == freezed
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
@@ -212,6 +242,8 @@ class _$_Post implements _Post {
       {required this.id,
       required this.author,
       required this.date,
+      required this.currentHabitat,
+      required this.condition,
       this.media = const [],
       this.description = '',
       this.location});
@@ -225,6 +257,10 @@ class _$_Post implements _Post {
   final User author;
   @override
   final DateTime date;
+  @override
+  final Habitat currentHabitat;
+  @override
+  final Condition condition;
   @JsonKey(defaultValue: const [])
   @override
   final List<String> media;
@@ -236,7 +272,7 @@ class _$_Post implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, author: $author, date: $date, media: $media, description: $description, location: $location)';
+    return 'Post(id: $id, author: $author, date: $date, currentHabitat: $currentHabitat, condition: $condition, media: $media, description: $description, location: $location)';
   }
 
   @override
@@ -249,6 +285,12 @@ class _$_Post implements _Post {
                 const DeepCollectionEquality().equals(other.author, author)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
+            (identical(other.currentHabitat, currentHabitat) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentHabitat, currentHabitat)) &&
+            (identical(other.condition, condition) ||
+                const DeepCollectionEquality()
+                    .equals(other.condition, condition)) &&
             (identical(other.media, media) ||
                 const DeepCollectionEquality().equals(other.media, media)) &&
             (identical(other.description, description) ||
@@ -265,6 +307,8 @@ class _$_Post implements _Post {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(date) ^
+      const DeepCollectionEquality().hash(currentHabitat) ^
+      const DeepCollectionEquality().hash(condition) ^
       const DeepCollectionEquality().hash(media) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(location);
@@ -285,6 +329,8 @@ abstract class _Post implements Post {
       {required int id,
       required User author,
       required DateTime date,
+      required Habitat currentHabitat,
+      required Condition condition,
       List<String> media,
       String description,
       Geo? location}) = _$_Post;
@@ -297,6 +343,10 @@ abstract class _Post implements Post {
   User get author => throw _privateConstructorUsedError;
   @override
   DateTime get date => throw _privateConstructorUsedError;
+  @override
+  Habitat get currentHabitat => throw _privateConstructorUsedError;
+  @override
+  Condition get condition => throw _privateConstructorUsedError;
   @override
   List<String> get media => throw _privateConstructorUsedError;
   @override

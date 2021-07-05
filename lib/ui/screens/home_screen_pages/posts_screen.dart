@@ -40,6 +40,24 @@ class PostsScreen extends StatelessWidget {
           PostsScreenPost()
         ],
       ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () => {},
+            heroTag: 'filterButton',
+            child: const Icon(Icons.sort),
+          ),
+          const SizedBox(
+            width: 8,
+          ),
+          FloatingActionButton(
+            onPressed: () => {},
+            heroTag: 'newPostButton',
+            child: const Icon(Icons.add),
+          ),
+        ],
+      ),
     );
   }
 }

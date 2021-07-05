@@ -8,21 +8,21 @@ class AppTheme {
   /// Colors from Tailwind CSS
   ///
   /// https://tailwindcss.com/docs/customizing-colors
-  static const int _primaryColor = 0xFF6366F1;
+  static const int _primaryColor = 0xFFF97316;
   static const String _primaryFont = Constants.DEFAULT_FONT;
 
   static const MaterialColor primarySwatch =
       MaterialColor(_primaryColor, <int, Color>{
-    50: Color(0xFFECEDFD),
-    100: Color(0xFFD0D1FB),
-    200: Color(0xFFB1B3F8),
-    300: Color(0xFF9294F5),
-    400: Color(0xFF7A7DF3),
+    50: Color(0xFFFFF7ED),
+    100: Color(0xFFFFEDD5),
+    200: Color(0xFFFED7AA),
+    300: Color(0xFFFDBA74),
+    400: Color(0xFFFB923C),
     500: Color(_primaryColor),
-    600: Color(0xFF5B5EEF),
-    700: Color(0xFF5153ED),
-    800: Color(0xFF4749EB),
-    900: Color(0xFF3538E7),
+    600: Color(0xFFEA580C),
+    700: Color(0xFFC2410C),
+    800: Color(0xFF9A3412),
+    900: Color(0xFF7C2D12),
   });
 
   static const int _textColor = 0xFF6B7280;

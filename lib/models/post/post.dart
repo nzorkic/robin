@@ -8,7 +8,9 @@ import 'package:robin/models/user/user.dart';
 part 'post.g.dart';
 part 'post.freezed.dart';
 
-// TODO: set default image
+enum Habitat { street, foster }
+
+enum Condition { well, injured, badlyInjured, dead }
 
 @freezed
 class Post with _$Post {
@@ -16,6 +18,8 @@ class Post with _$Post {
     required int id,
     required User author,
     required DateTime date,
+    required Habitat currentHabitat,
+    required Condition condition,
     @Default([]) List<String> media,
     @Default('') String description,
     Geo? location,
