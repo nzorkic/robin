@@ -3,10 +3,8 @@ abstract class Storages {
   static const String SETTINGS_STORAGE = 'settings';
 }
 
-abstract class StorageValues {
-  StorageValues._();
-  // SETTINGS_STORAGE
+abstract class SettingsStorage {
+  SettingsStorage._();
   static const String DARK_THEME_ENABLED = 'darkThemeEnabled';
   static const String CURRENT_LANGUAGE = 'language';
-  static const String CURRENT_BOTTON_TAB = 'currentTab';
 }

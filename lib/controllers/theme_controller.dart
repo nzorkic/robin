@@ -15,7 +15,7 @@ final _settingsData = storageProvider(settingsBoxProvider);
 
 final themeController = StateNotifierProvider<ThemeController, bool>((ref) {
   final _isDarkModeEnabled =
-      ref.read(_settingsData).getBoolValue(StorageValues.DARK_THEME_ENABLED);
+      ref.read(_settingsData).getBoolValue(SettingsStorage.DARK_THEME_ENABLED);
   return ThemeController(_isDarkModeEnabled);
 });
 
@@ -27,12 +27,12 @@ class ThemeController extends StateNotifier<bool> with UtilityLogger {
   void toggleTheme(BuildContext context) {
     final _isDarkThemeEnabled = context
         .read(_settingsData)
-        .getBoolValue(StorageValues.DARK_THEME_ENABLED);
+        .getBoolValue(SettingsStorage.DARK_THEME_ENABLED);
     final _toggleValue = !_isDarkThemeEnabled;
 
     context
         .read(_settingsData)
-        .setBoolValue(StorageValues.DARK_THEME_ENABLED, _toggleValue)
+        .setBoolValue(SettingsStorage.DARK_THEME_ENABLED, _toggleValue)
         .whenComplete(() => {
               state = _toggleValue,
               logger.info(penInfo(

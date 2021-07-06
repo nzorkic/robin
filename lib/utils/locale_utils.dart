@@ -27,12 +27,12 @@ class LocaleUtils {
   }
 
   static String getCurrentLocaleName() {
-    return _settingsData.getStringValue(StorageValues.CURRENT_LANGUAGE,
+    return _settingsData.getStringValue(SettingsStorage.CURRENT_LANGUAGE,
         defaultValue: _localesMap[_fallbackLanguage]!);
   }
 
   static String getCurrentLocaleCode() {
-    var name = _settingsData.getStringValue(StorageValues.CURRENT_LANGUAGE);
+    var name = _settingsData.getStringValue(SettingsStorage.CURRENT_LANGUAGE);
     return _localesMap.keys.firstWhere((key) => _localesMap[key] == name,
         orElse: () => _fallbackLanguage);
   }

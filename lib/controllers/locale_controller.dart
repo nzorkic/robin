@@ -18,7 +18,7 @@ final _settingsData = storageProvider(settingsBoxProvider);
 
 final localeController = StateNotifierProvider<LocaleController, String>((ref) {
   final _currentLocale = ref.read(_settingsData).getStringValue(
-      StorageValues.CURRENT_LANGUAGE,
+      SettingsStorage.CURRENT_LANGUAGE,
       defaultValue: Constants.FALLBACK_LANGUAGE);
   return LocaleController(_currentLocale);
 });
@@ -32,7 +32,7 @@ class LocaleController extends StateNotifier<String> with UtilityLogger {
     String _localeCode = LocaleUtils.getLocaleCodeForName(localeName);
     context
         .read(_settingsData)
-        .setStringValue(StorageValues.CURRENT_LANGUAGE, _localeCode)
+        .setStringValue(SettingsStorage.CURRENT_LANGUAGE, _localeCode)
         .whenComplete(
           () => {
             context.setLocale(Locale(_localeCode)),
