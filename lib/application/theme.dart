@@ -1,10 +1,15 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 // Project imports:
 import 'package:robin/application/config/app_constants.dart';
 
-class AppTheme {
+final themeProvider = Provider<RobinTheme>((_) => RobinTheme());
+
+class RobinTheme {
   /// Colors from Tailwind CSS
   ///
   /// https://tailwindcss.com/docs/customizing-colors

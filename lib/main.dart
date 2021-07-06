@@ -21,6 +21,8 @@ import 'package:robin/application/logging/logger_types.dart';
 import 'package:robin/application/navigation/app_router.gr.dart';
 import 'package:robin/application/navigation/auth_guard.dart';
 import 'package:robin/application/rs_delegate.dart';
+import 'package:robin/application/theme.dart';
+import 'package:robin/controllers/theme_controller.dart';
 import 'package:robin/providers.dart';
 import 'package:robin/utils/locale_utils.dart';
 
@@ -47,25 +49,24 @@ void main() async {
             LocaleUtils.getLocaleCodes().map((lang) => Locale(lang)).toList(),
         useFallbackTranslations: true,
         fallbackLocale: const Locale(Constants.FALLBACK_LANGUAGE),
-        child: MyApp(),
+        child: Robin(),
       ),
     ),
   );
 }
 
-class MyApp extends ConsumerWidget {
+class Robin extends ConsumerWidget {
   final _appRouter = AppRouter(authGuard: AuthGuard());
 
-  MyApp({Key? key}) : super(key: key);
+  Robin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final bool _appThemeState = watch(appThemeStateProvider);
+    final bool _appThemeState = watch(themeController);
 
     return MaterialApp.router(
-      theme: context
-          .read(appThemeProvider)
-          .getAppThemeData(context, _appThemeState),
+      theme:
+          context.read(themeProvider).getAppThemeData(context, _appThemeState),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
         ...context.localizationDelegates,

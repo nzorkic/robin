@@ -6,6 +6,7 @@ import 'package:robin/application/navigation/auth_guard.dart';
 import 'package:robin/ui/screens/home_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/messages_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/posts_screen.dart';
+import 'package:robin/ui/screens/home_screen_pages/posts_screen_pages/new_post_screen.dart';
 import 'package:robin/ui/screens/home_screen_pages/profile_screen.dart';
 import 'package:robin/ui/screens/login_screen.dart';
 import 'package:robin/ui/screens/settings_screen.dart';
@@ -28,6 +29,7 @@ import 'package:robin/ui/screens/settings_screen.dart';
           page: EmptyRouterPage,
           children: [
             AutoRoute(path: '', page: PostsScreen),
+            AutoRoute(path: 'new', page: NewPostScreen),
             RedirectRoute(path: '*', redirectTo: ''),
           ],
         ),

@@ -1,8 +1,15 @@
 // Package imports:
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-class StorageUtils {
-  StorageUtils({
+final storageProvider = Provider.autoDispose
+    .family<StorageService, Provider<Box<dynamic>>>((ref, box) {
+  final _hiveBox = ref.watch(box);
+  return StorageService(box: _hiveBox);
+});
+
+class StorageService {
+  StorageService({
     required this.box,
   });
 

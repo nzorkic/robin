@@ -1,10 +1,16 @@
 // Package imports:
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+// Package imports:
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import 'package:robin/application/config/app_constants.dart';
 import 'package:robin/application/config/storage_constants.dart';
 import 'package:robin/providers.dart';
+import 'package:robin/services/storage_service.dart';
+
+final _settingsData =
+    ProviderContainer().read(storageProvider(settingsBoxProvider));
 
 class LocaleUtils {
   LocaleUtils._();
@@ -21,14 +27,12 @@ class LocaleUtils {
   }
 
   static String getCurrentLocaleName() {
-    return useProvider(storageUtilsProvider).getStringValue(
-        StorageValues.CURRENT_LANGUAGE,
+    return _settingsData.getStringValue(StorageValues.CURRENT_LANGUAGE,
         defaultValue: _localesMap[_fallbackLanguage]!);
   }
 
   static String getCurrentLocaleCode() {
-    var name = useProvider(storageUtilsProvider)
-        .getStringValue(StorageValues.CURRENT_LANGUAGE);
+    var name = _settingsData.getStringValue(StorageValues.CURRENT_LANGUAGE);
     return _localesMap.keys.firstWhere((key) => _localesMap[key] == name,
         orElse: () => _fallbackLanguage);
   }

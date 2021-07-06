@@ -52,7 +52,7 @@ class PostsScreen extends StatelessWidget {
             width: 8,
           ),
           FloatingActionButton(
-            onPressed: () => {},
+            onPressed: () => context.pushRoute(const NewPostRoute()),
             heroTag: 'newPostButton',
             child: const Icon(Icons.add),
           ),

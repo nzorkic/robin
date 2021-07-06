@@ -9,20 +9,29 @@ import 'package:robin/application/config/storage_constants.dart';
 import 'package:robin/application/logging/log_pens.dart';
 import 'package:robin/application/logging/logger_types.dart';
 import 'package:robin/providers.dart';
+import 'package:robin/services/storage_service.dart';
 
-class AppThemeNotifier extends StateNotifier<bool> with UtilityLogger {
-  AppThemeNotifier(this.isDarkTheme) : super(isDarkTheme);
+final _settingsData = storageProvider(settingsBoxProvider);
+
+final themeController = StateNotifierProvider<ThemeController, bool>((ref) {
+  final _isDarkModeEnabled =
+      ref.read(_settingsData).getBoolValue(StorageValues.DARK_THEME_ENABLED);
+  return ThemeController(_isDarkModeEnabled);
+});
+
+class ThemeController extends StateNotifier<bool> with UtilityLogger {
+  ThemeController(this.isDarkTheme) : super(isDarkTheme);
 
   final bool isDarkTheme;
 
-  void toggleAppTheme(BuildContext context) {
+  void toggleTheme(BuildContext context) {
     final _isDarkThemeEnabled = context
-        .read(storageUtilsProvider)
+        .read(_settingsData)
         .getBoolValue(StorageValues.DARK_THEME_ENABLED);
     final _toggleValue = !_isDarkThemeEnabled;
 
     context
-        .read(storageUtilsProvider)
+        .read(_settingsData)
         .setBoolValue(StorageValues.DARK_THEME_ENABLED, _toggleValue)
         .whenComplete(() => {
               state = _toggleValue,

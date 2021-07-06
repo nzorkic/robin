@@ -10,7 +10,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:robin/application/config/app_constants.dart';
 import 'package:robin/application/logging/log_pens.dart';
 import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/providers.dart';
+import 'package:robin/controllers/locale_controller.dart';
+import 'package:robin/controllers/theme_controller.dart';
 import 'package:robin/ui/widgets/settings_screen/drop_down_selector.dart';
 import 'package:robin/ui/widgets/settings_screen/settings_tile.dart';
 import 'package:robin/ui/widgets/settings_screen/theme_toggle.dart';
@@ -21,17 +22,17 @@ class SettingsScreen extends ConsumerWidget with UiLogger {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
     logger.info(penInfo('Building SettingsScreen...'));
-    final _appThemeStateProvider = context.read(appThemeStateProvider.notifier);
-    final _localeStateProvider = context.read(localeStateProvider.notifier);
+    final _appThemeStateProvider = context.read(themeController.notifier);
+    final _localeStateProvider = context.read(localeController.notifier);
 
-    final String _currentLocale = watch(localeStateProvider);
-    final bool _isDarkMode = watch(appThemeStateProvider);
+    final String _currentLocale = watch(localeController);
+    final bool _isDarkMode = watch(themeController);
 
     void _changeLocale(String val) =>
         _localeStateProvider.changeLocale(context, val.toString());
 
     void _toggleTheme(BuildContext ctx) =>
-        _appThemeStateProvider.toggleAppTheme(ctx);
+        _appThemeStateProvider.toggleTheme(ctx);
 
     return Scaffold(
       appBar: AppBar(
