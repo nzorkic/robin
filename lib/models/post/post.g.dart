@@ -13,9 +13,8 @@ _$_Post _$_$_PostFromJson(Map<String, dynamic> json) {
     date: DateTime.parse(json['date'] as String),
     currentHabitat: _$enumDecode(_$HabitatEnumMap, json['currentHabitat']),
     condition: _$enumDecode(_$ConditionEnumMap, json['condition']),
-    media:
-        (json['media'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-            [],
+    gender:
+        _$enumDecodeNullable(_$GenderEnumMap, json['gender']) ?? Gender.unknown,
     description: json['description'] as String? ?? '',
     location: json['location'] == null
         ? null
@@ -29,7 +28,7 @@ Map<String, dynamic> _$_$_PostToJson(_$_Post instance) => <String, dynamic>{
       'date': instance.date.toIso8601String(),
       'currentHabitat': _$HabitatEnumMap[instance.currentHabitat],
       'condition': _$ConditionEnumMap[instance.condition],
-      'media': instance.media,
+      'gender': _$GenderEnumMap[instance.gender],
       'description': instance.description,
       'location': instance.location,
     };
@@ -70,4 +69,21 @@ const _$ConditionEnumMap = {
   Condition.injured: 'injured',
   Condition.badlyInjured: 'badlyInjured',
   Condition.dead: 'dead',
+};
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$GenderEnumMap = {
+  Gender.male: 'male',
+  Gender.female: 'female',
+  Gender.unknown: 'unknown',
 };

@@ -26,7 +26,7 @@ class _$PostTearOff {
       required DateTime date,
       required Habitat currentHabitat,
       required Condition condition,
-      List<String> media = const [],
+      Gender gender = Gender.unknown,
       String description = '',
       Geo? location}) {
     return _Post(
@@ -35,7 +35,7 @@ class _$PostTearOff {
       date: date,
       currentHabitat: currentHabitat,
       condition: condition,
-      media: media,
+      gender: gender,
       description: description,
       location: location,
     );
@@ -56,7 +56,7 @@ mixin _$Post {
   DateTime get date => throw _privateConstructorUsedError;
   Habitat get currentHabitat => throw _privateConstructorUsedError;
   Condition get condition => throw _privateConstructorUsedError;
-  List<String> get media => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Geo? get location => throw _privateConstructorUsedError;
 
@@ -75,7 +75,7 @@ abstract class $PostCopyWith<$Res> {
       DateTime date,
       Habitat currentHabitat,
       Condition condition,
-      List<String> media,
+      Gender gender,
       String description,
       Geo? location});
 
@@ -98,7 +98,7 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
     Object? date = freezed,
     Object? currentHabitat = freezed,
     Object? condition = freezed,
-    Object? media = freezed,
+    Object? gender = freezed,
     Object? description = freezed,
     Object? location = freezed,
   }) {
@@ -123,10 +123,10 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as Condition,
-      media: media == freezed
-          ? _value.media
-          : media // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
       DateTime date,
       Habitat currentHabitat,
       Condition condition,
-      List<String> media,
+      Gender gender,
       String description,
       Geo? location});
 
@@ -194,7 +194,7 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
     Object? date = freezed,
     Object? currentHabitat = freezed,
     Object? condition = freezed,
-    Object? media = freezed,
+    Object? gender = freezed,
     Object? description = freezed,
     Object? location = freezed,
   }) {
@@ -219,10 +219,10 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as Condition,
-      media: media == freezed
-          ? _value.media
-          : media // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -244,7 +244,7 @@ class _$_Post implements _Post {
       required this.date,
       required this.currentHabitat,
       required this.condition,
-      this.media = const [],
+      this.gender = Gender.unknown,
       this.description = '',
       this.location});
 
@@ -261,9 +261,9 @@ class _$_Post implements _Post {
   final Habitat currentHabitat;
   @override
   final Condition condition;
-  @JsonKey(defaultValue: const [])
+  @JsonKey(defaultValue: Gender.unknown)
   @override
-  final List<String> media;
+  final Gender gender;
   @JsonKey(defaultValue: '')
   @override
   final String description;
@@ -272,7 +272,7 @@ class _$_Post implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, author: $author, date: $date, currentHabitat: $currentHabitat, condition: $condition, media: $media, description: $description, location: $location)';
+    return 'Post(id: $id, author: $author, date: $date, currentHabitat: $currentHabitat, condition: $condition, gender: $gender, description: $description, location: $location)';
   }
 
   @override
@@ -291,8 +291,8 @@ class _$_Post implements _Post {
             (identical(other.condition, condition) ||
                 const DeepCollectionEquality()
                     .equals(other.condition, condition)) &&
-            (identical(other.media, media) ||
-                const DeepCollectionEquality().equals(other.media, media)) &&
+            (identical(other.gender, gender) ||
+                const DeepCollectionEquality().equals(other.gender, gender)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -309,7 +309,7 @@ class _$_Post implements _Post {
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(currentHabitat) ^
       const DeepCollectionEquality().hash(condition) ^
-      const DeepCollectionEquality().hash(media) ^
+      const DeepCollectionEquality().hash(gender) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(location);
 
@@ -331,7 +331,7 @@ abstract class _Post implements Post {
       required DateTime date,
       required Habitat currentHabitat,
       required Condition condition,
-      List<String> media,
+      Gender gender,
       String description,
       Geo? location}) = _$_Post;
 
@@ -348,7 +348,7 @@ abstract class _Post implements Post {
   @override
   Condition get condition => throw _privateConstructorUsedError;
   @override
-  List<String> get media => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
   @override

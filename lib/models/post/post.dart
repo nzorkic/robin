@@ -12,6 +12,8 @@ enum Habitat { street, foster }
 
 enum Condition { well, injured, badlyInjured, dead }
 
+enum Gender { male, female, unknown }
+
 @freezed
 class Post with _$Post {
   const factory Post({
@@ -20,7 +22,7 @@ class Post with _$Post {
     required DateTime date,
     required Habitat currentHabitat,
     required Condition condition,
-    @Default([]) List<String> media,
+    @Default(Gender.unknown) Gender gender,
     @Default('') String description,
     Geo? location,
   }) = _Post;
