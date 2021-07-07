@@ -38,7 +38,17 @@ class _NewPostScreenState extends State<NewPostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: GestureDetector(
+              child: const Icon(Icons.check),
+              onTap: () => {},
+            ),
+          )
+        ],
+      ),
       body: Form(
         key: _formKey,
         child: Scaffold(
@@ -130,16 +140,12 @@ class _NewPostScreenState extends State<NewPostScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Align(
-                          alignment: Alignment(-0.8, 0),
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              'Prebivaliste',
-                            ),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Text(
+                            'Prebivaliste',
                           ),
                         ),
                         RadioButton(
@@ -165,16 +171,12 @@ class _NewPostScreenState extends State<NewPostScreen> {
                       ],
                     ),
                     Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Align(
-                          alignment: Alignment(-0.8, 0),
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              'Stanje',
-                            ),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Text(
+                            'Stanje',
                           ),
                         ),
                         RadioButton(
@@ -200,16 +202,12 @@ class _NewPostScreenState extends State<NewPostScreen> {
                       ],
                     ),
                     Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Align(
-                          alignment: Alignment(-0.8, 0),
-                          child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              'Pol',
-                            ),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Text(
+                            'Pol',
                           ),
                         ),
                         RadioButton(
@@ -278,13 +276,6 @@ class _NewPostScreenState extends State<NewPostScreen> {
                     },
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Kreiraj'),
-                  ),
-                )
               ],
             ),
           ),
