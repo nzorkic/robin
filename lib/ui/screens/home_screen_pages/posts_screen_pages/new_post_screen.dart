@@ -11,7 +11,7 @@ import 'package:image_picker/image_picker.dart';
 
 // Project imports:
 import 'package:robin/models/post/post.dart';
-import 'package:robin/services/image_service.dart';
+import 'package:robin/controllers/media_controller.dart';
 import 'package:robin/utils/enum_utils.dart';
 
 class NewPostScreen extends StatefulWidget {
