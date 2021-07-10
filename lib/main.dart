@@ -13,18 +13,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // Project imports:
-import 'package:robin/application/config/app_constants.dart';
-import 'package:robin/application/config/storage_constants.dart';
-import 'package:robin/application/init_log.dart';
-import 'package:robin/application/logging/log_pens.dart';
-import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/application/navigation/app_router.gr.dart';
-import 'package:robin/application/navigation/auth_guard.dart';
-import 'package:robin/application/rs_delegate.dart';
-import 'package:robin/application/theme.dart';
-import 'package:robin/controllers/theme_controller.dart';
-import 'package:robin/providers.dart';
-import 'package:robin/utils/locale_utils.dart';
+import 'application/config/app_constants.dart';
+import 'application/config/storage_constants.dart';
+import 'application/init_log.dart';
+import 'application/logging/log_pens.dart';
+import 'application/logging/logger_types.dart';
+import 'application/navigation/app_router.gr.dart';
+import 'application/navigation/auth_guard.dart';
+import 'application/rs_delegate.dart';
+import 'application/theme.dart';
+import 'controllers/theme_controller.dart';
+import 'providers.dart';
+import 'utils/locale_utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -6,8 +6,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/navigation/app_router.gr.dart';
-import 'package:robin/repositories/auth_repository.dart';
+import '../../application/navigation/app_router.gr.dart';
+import '../../repositories/auth_repository.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);

@@ -2,14 +2,14 @@
 import 'package:auto_route/auto_route.dart';
 
 // Project imports:
-import 'package:robin/application/navigation/auth_guard.dart';
-import 'package:robin/ui/screens/home_screen.dart';
-import 'package:robin/ui/screens/home_screen_pages/messages_screen.dart';
-import 'package:robin/ui/screens/home_screen_pages/posts_screen.dart';
-import 'package:robin/ui/screens/home_screen_pages/posts_screen_pages/new_post_screen.dart';
-import 'package:robin/ui/screens/home_screen_pages/profile_screen.dart';
-import 'package:robin/ui/screens/login_screen.dart';
-import 'package:robin/ui/screens/settings_screen.dart';
+import '../../ui/screens/home_screen.dart';
+import '../../ui/screens/home_screen_pages/messages_screen.dart';
+import '../../ui/screens/home_screen_pages/posts_screen.dart';
+import '../../ui/screens/home_screen_pages/posts_screen_pages/new_post_screen.dart';
+import '../../ui/screens/home_screen_pages/profile_screen.dart';
+import '../../ui/screens/login_screen.dart';
+import '../../ui/screens/settings_screen.dart';
+import 'auth_guard.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Screen,Route',

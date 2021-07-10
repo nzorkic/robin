@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/repositories/auth_repository.dart';
+import '../repositories/auth_repository.dart';
 
 final authController = StateNotifierProvider<AuthController, User?>(
     (ref) => AuthController(ref.read));

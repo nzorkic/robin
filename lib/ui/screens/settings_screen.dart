@@ -7,14 +7,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/config/app_constants.dart';
-import 'package:robin/application/logging/log_pens.dart';
-import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/controllers/locale_controller.dart';
-import 'package:robin/controllers/theme_controller.dart';
-import 'package:robin/ui/widgets/settings_screen/drop_down_selector.dart';
-import 'package:robin/ui/widgets/settings_screen/settings_tile.dart';
-import 'package:robin/ui/widgets/settings_screen/theme_toggle.dart';
+import '../../application/config/app_constants.dart';
+import '../../application/logging/log_pens.dart';
+import '../../application/logging/logger_types.dart';
+import '../../controllers/locale_controller.dart';
+import '../../controllers/theme_controller.dart';
+import '../widgets/settings_screen/drop_down_selector.dart';
+import '../widgets/settings_screen/settings_tile.dart';
+import '../widgets/settings_screen/theme_toggle.dart';
 
 class SettingsScreen extends ConsumerWidget with UiLogger {
   const SettingsScreen({Key? key}) : super(key: key);

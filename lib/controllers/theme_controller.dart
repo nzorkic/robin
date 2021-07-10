@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/config/storage_constants.dart';
-import 'package:robin/application/logging/log_pens.dart';
-import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/providers.dart';
-import 'package:robin/services/storage_service.dart';
+import '../application/config/storage_constants.dart';
+import '../application/logging/log_pens.dart';
+import '../application/logging/logger_types.dart';
+import '../providers.dart';
+import '../services/storage_service.dart';
 
 final _settingsData = storageProvider(settingsBoxProvider);
 

@@ -4,10 +4,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/config/app_constants.dart';
-import 'package:robin/application/config/storage_constants.dart';
-import 'package:robin/providers.dart';
-import 'package:robin/services/storage_service.dart';
+import '../application/config/app_constants.dart';
+import '../application/config/storage_constants.dart';
+import '../providers.dart';
+import '../services/storage_service.dart';
 
 final _settingsData =
     ProviderContainer().read(storageProvider(settingsBoxProvider));

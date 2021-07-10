@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/config/app_constants.dart';
+import 'config/app_constants.dart';
 
 final themeProvider = Provider<RobinTheme>((_) => RobinTheme());
 

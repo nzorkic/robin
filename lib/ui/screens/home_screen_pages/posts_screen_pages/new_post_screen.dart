@@ -10,9 +10,9 @@ import 'package:group_radio_button/group_radio_button.dart';
 import 'package:image_picker/image_picker.dart';
 
 // Project imports:
-import 'package:robin/models/post/post.dart';
-import 'package:robin/controllers/media_controller.dart';
-import 'package:robin/utils/enum_utils.dart';
+import '../../../../controllers/media_controller.dart';
+import '../../../../models/post/post.dart';
+import '../../../../utils/enum_utils.dart';
 
 class NewPostScreen extends StatefulWidget {
   const NewPostScreen({Key? key}) : super(key: key);

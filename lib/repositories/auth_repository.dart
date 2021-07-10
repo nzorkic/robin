@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/providers.dart';
+import '../providers.dart';
 
 abstract class BaseAuthRepository {
   Stream<User?> get authStateChanges;

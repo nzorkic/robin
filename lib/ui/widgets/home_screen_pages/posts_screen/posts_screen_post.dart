@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import 'package:robin/ui/widgets/home_screen_pages/posts_screen/posts_screen_carousel.dart';
+import 'posts_screen_carousel.dart';
 
 class PostsScreenPost extends StatelessWidget {
   const PostsScreenPost({Key? key}) : super(key: key);

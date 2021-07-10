@@ -6,13 +6,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/config/app_constants.dart';
-import 'package:robin/application/config/storage_constants.dart';
-import 'package:robin/application/logging/log_pens.dart';
-import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/providers.dart';
-import 'package:robin/services/storage_service.dart';
-import 'package:robin/utils/locale_utils.dart';
+import '../application/config/app_constants.dart';
+import '../application/config/storage_constants.dart';
+import '../application/logging/log_pens.dart';
+import '../application/logging/logger_types.dart';
+import '../providers.dart';
+import '../services/storage_service.dart';
+import '../utils/locale_utils.dart';
 
 final _settingsData = storageProvider(settingsBoxProvider);
 

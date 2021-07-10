@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
 // Project imports:
-import 'package:robin/application/logging/log_pens.dart';
-import 'package:robin/application/logging/logger_types.dart';
-import 'package:robin/application/navigation/app_router.gr.dart';
+import '../../application/logging/log_pens.dart';
+import '../../application/logging/logger_types.dart';
+import '../../application/navigation/app_router.gr.dart';
 
 // Package imports:
 

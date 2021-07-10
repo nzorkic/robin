@@ -12,3 +12,4 @@ linter:
     prefer_single_quotes: true
     prefer_conditional_assignment: true
     prefer_const_declarations: true
+    prefer_relative_imports: true

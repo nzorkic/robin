@@ -7,9 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import 'package:robin/application/navigation/app_router.gr.dart';
-import 'package:robin/repositories/auth_repository.dart';
-import 'package:robin/ui/widgets/home_screen_pages/posts_screen/posts_screen_post.dart';
+import '../../../application/navigation/app_router.gr.dart';
+import '../../../repositories/auth_repository.dart';
+import '../../widgets/home_screen_pages/posts_screen/posts_screen_post.dart';
 
 class PostsScreen extends StatelessWidget {
   const PostsScreen({Key? key}) : super(key: key);
