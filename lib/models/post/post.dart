@@ -10,7 +10,7 @@ part 'post.freezed.dart';
 
 enum Habitat { street, foster }
 
-enum Condition { well, injured, badlyInjured, dead }
+enum Condition { well, sick, injured, dead }
 
 enum Gender { male, female, unknown }
 

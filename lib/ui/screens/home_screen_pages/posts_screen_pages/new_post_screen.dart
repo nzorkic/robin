@@ -10,7 +10,9 @@ import 'package:group_radio_button/group_radio_button.dart';
 import 'package:image_picker/image_picker.dart';
 
 // Project imports:
+import 'package:robin/models/post/post.dart';
 import 'package:robin/services/image_service.dart';
+import 'package:robin/utils/enum_utils.dart';
 
 class NewPostScreen extends StatefulWidget {
   const NewPostScreen({Key? key}) : super(key: key);
@@ -22,9 +24,9 @@ class NewPostScreen extends StatefulWidget {
 class _NewPostScreenState extends State<NewPostScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  String _placeValue = 'Ulica';
-  String _stateValue = 'Zdrav';
-  String _genderValue = 'Muski';
+  String _placeValue = EnumUtils.asString(Habitat.street);
+  String _stateValue = EnumUtils.asString(Condition.well);
+  String _genderValue = EnumUtils.asString(Gender.unknown);
   TextEditingController? textController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -149,22 +151,22 @@ class _NewPostScreenState extends State<NewPostScreen> {
                           ),
                         ),
                         RadioButton(
-                          description: 'Ulica',
-                          value: 'Ulica',
+                          description:
+                              EnumUtils.asCapitalizedString(Habitat.street),
+                          value: EnumUtils.asString(Habitat.street),
                           groupValue: _placeValue,
-                          onChanged: (val) => {
-                            setState(
-                              () => _placeValue = val.toString(),
-                            ),
+                          onChanged: (street) => {
+                            setState(() => _placeValue = street.toString()),
                           },
                         ),
                         RadioButton(
-                          description: 'Foster',
-                          value: 'Foster',
+                          description:
+                              EnumUtils.asCapitalizedString(Habitat.foster),
+                          value: EnumUtils.asString(Habitat.foster),
                           groupValue: _placeValue,
-                          onChanged: (val) => {
+                          onChanged: (foster) => {
                             setState(
-                              () => _placeValue = val.toString(),
+                              () => _placeValue = foster.toString(),
                             ),
                           },
                         ),
@@ -180,22 +182,35 @@ class _NewPostScreenState extends State<NewPostScreen> {
                           ),
                         ),
                         RadioButton(
-                          description: 'Zdrav',
-                          value: 'Zdrav',
+                          description:
+                              EnumUtils.asCapitalizedString(Condition.well),
+                          value: EnumUtils.asString(Condition.well),
                           groupValue: _stateValue,
-                          onChanged: (val) => {
+                          onChanged: (well) => {
                             setState(
-                              () => _stateValue = val.toString(),
+                              () => _stateValue = well.toString(),
                             ),
                           },
                         ),
                         RadioButton(
-                          description: 'Povredjen',
-                          value: 'Povredjen',
+                          description:
+                              EnumUtils.asCapitalizedString(Condition.injured),
+                          value: EnumUtils.asString(Condition.injured),
                           groupValue: _stateValue,
-                          onChanged: (val) => {
+                          onChanged: (injured) => {
                             setState(
-                              () => _stateValue = val.toString(),
+                              () => _stateValue = injured.toString(),
+                            ),
+                          },
+                        ),
+                        RadioButton(
+                          description:
+                              EnumUtils.asCapitalizedString(Condition.sick),
+                          value: EnumUtils.asString(Condition.sick),
+                          groupValue: _stateValue,
+                          onChanged: (sick) => {
+                            setState(
+                              () => _stateValue = sick.toString(),
                             ),
                           },
                         ),
@@ -211,22 +226,35 @@ class _NewPostScreenState extends State<NewPostScreen> {
                           ),
                         ),
                         RadioButton(
-                          description: 'Muski',
-                          value: 'Muski',
+                          description:
+                              EnumUtils.asCapitalizedString(Gender.male),
+                          value: EnumUtils.asString(Gender.male),
                           groupValue: _genderValue,
-                          onChanged: (val) => {
+                          onChanged: (gender) => {
                             setState(
-                              () => _genderValue = val.toString(),
+                              () => _genderValue = gender.toString(),
                             ),
                           },
                         ),
                         RadioButton(
-                          description: 'Zenski',
-                          value: 'Zenski',
+                          description:
+                              EnumUtils.asCapitalizedString(Gender.female),
+                          value: EnumUtils.asString(Gender.female),
                           groupValue: _genderValue,
-                          onChanged: (val) => {
+                          onChanged: (gender) => {
                             setState(
-                              () => _genderValue = val.toString(),
+                              () => _genderValue = gender.toString(),
+                            ),
+                          },
+                        ),
+                        RadioButton(
+                          description:
+                              EnumUtils.asCapitalizedString(Gender.unknown),
+                          value: EnumUtils.asString(Gender.unknown),
+                          groupValue: _genderValue,
+                          onChanged: (gender) => {
+                            setState(
+                              () => _genderValue = gender.toString(),
                             ),
                           },
                         ),

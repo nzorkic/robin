@@ -66,8 +66,8 @@ const _$HabitatEnumMap = {
 
 const _$ConditionEnumMap = {
   Condition.well: 'well',
+  Condition.sick: 'sick',
   Condition.injured: 'injured',
-  Condition.badlyInjured: 'badlyInjured',
   Condition.dead: 'dead',
 };
 
