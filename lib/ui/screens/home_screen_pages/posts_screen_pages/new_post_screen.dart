@@ -2,6 +2,7 @@
 import 'dart:io';
 
 // Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -93,16 +94,22 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                     ),
                                     shrinkWrap: true,
                                     scrollDirection: Axis.vertical,
-                                    children: _images
-                                        .map(
-                                          (e) => Image.file(
-                                            File(e!),
-                                            width: 100,
-                                            height: 100,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        )
-                                        .toList(),
+                                    children: _images.map((e) {
+                                      if (kIsWeb) {
+                                        return Image.network(
+                                          e!,
+                                          width: 100,
+                                          height: 100,
+                                          fit: BoxFit.cover,
+                                        );
+                                      }
+                                      return Image.file(
+                                        File(e!),
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.cover,
+                                      );
+                                    }).toList(),
                                   )
                                 : Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
